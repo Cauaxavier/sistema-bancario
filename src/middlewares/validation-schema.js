@@ -3,7 +3,7 @@ const validateBody = joiSchema => async (req, res, next) => {
         await joiSchema.validateAsync(req.body);
         return next();
     } catch (error) {
-        return res.status(500).json({ mensagem: "Erro interno." });
+        return res.status(500).json({ message: error.message });
     }
 }
 

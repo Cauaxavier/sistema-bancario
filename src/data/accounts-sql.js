@@ -13,5 +13,23 @@ module.exports = {
         }).returning('*');
     
         return knex("contas").insert({ usuario_id: user[0].id });
+    },
+
+    async get_account_by_cpf(cpf) {
+        return knex("usuarios").where({ cpf }).first();
+    },
+
+    async get_account_by_email(email) {
+        return knex("usuarios").where({ email }).first();
+    },
+
+    async list_accounts() {
+        return knex("contas")
+            .leftJoin("usuarios", "contas.usuario_id", "usuarios.id")
+            .select("contas.id as numero", "contas.saldo", "usuarios.* as usuario")    
+
+        //         onst transacoesPorCategoria = await knex('transacoes')
+    //   .leftJoin('categorias', 'transacoes.categoria_id', 'categorias.id')
+    //   .select('transacoes.*', 'categorias.descricao as categoria_nome');
     }
 }

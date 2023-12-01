@@ -26,7 +26,7 @@ module.exports = joi.object({
         'string.empty': 'Senha não pode ser vazia',
         'string.base': 'o senha precisa ser do tipo texto',
         'any.required': 'Senha é obrigatória',
-        'string.min': 'A senha deve ter pelo menos 5 caracteres'
+        'string.min': 'A senha deve ter pelo menos 6 caracteres'
     }),
 
     data_nascimento: joi.string().min(8).required().messages({
