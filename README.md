@@ -45,6 +45,9 @@ Antes de começar, certifique-se de ter os seguintes requisitos:
 - [Knex](https://knexjs.org/guide/): Query builder para criar as querys do banco.
 - [Jsonwebtoken](https://jwt.io/introduction): Para gerar e válidar o token do usuário.
 - [Dotenv](https://www.npmjs.com/package/dotenv): Para criar as variáveis de ambiente.
+- [Cors](https://expressjs.com/en/resources/middleware/cors.html): Informa aos navegadores se um determinado recurso pode ou não ser acessado.
+- [pg](https://node-postgres.com/): Cria a conexão com o banco de dados.
+- [joi](https://joi.dev/api/): Faz verificações personalizadas das requisições. 
 
 ## 🔧 Instalação 
 
