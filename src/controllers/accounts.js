@@ -32,7 +32,7 @@ module.exports = {
 
     async listAccounts(req, res) {
         try {
-
+            
             const accounts = await accountsSql.list_accounts();
 
             const formatAccounts = accounts.map(account => {

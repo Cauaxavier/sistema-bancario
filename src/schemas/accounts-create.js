@@ -2,44 +2,44 @@ const joi = require('joi');
 
 module.exports = joi.object({
     nome: joi.string().min(3).required().messages({
-        'string.min': 'Nome deve ter no mínimo 3 caracteres',
-        'string.base': 'o nome precisa ser do tipo texto',
-        'string.empty': 'Nome não pode ser vazio',
-        'any.required': 'Nome é obrigatório'
+        'string.min': 'Name must have at least 3 characters.',
+        'string.base': 'Name must be text type.',
+        'string.empty': 'Name cannot be empty.',
+        'any.required': 'Name is required.'
     }),
 
     cpf: joi.string().length(11).required().messages({
-        'string.base': 'o cpf precisa ser do tipo texto',
-        'string.length': 'O cpf precisa conter 11 caracteres',
-        'string.empty': 'Cpf não pode ser vazio',
-        'any.required': 'Cpf é obrigatório'
+        'string.base': 'Cpf must be text type.',
+        'string.length': 'Cpf must have 11 characters.',
+        'string.empty': 'Cpf cannot be empty.',
+        'any.required': 'Cpf is required.'
     }),
 
     email: joi.string().email().required().messages({
-        'string.email': 'Email inválido',
-        'string.empty': 'Email não pode ser vazio',
-        'string.base': 'o email precisa ser do tipo texto',
-        'any.required': 'Email é obrigatório'
+        'string.email': 'Email invalid.',
+        'string.empty': 'Email cannot be empty.',
+        'string.base': 'Email must be text type.',
+        'any.required': 'Email is required.'
     }),
 
     senha: joi.string().min(6).required().messages({
-        'string.empty': 'Senha não pode ser vazia',
-        'string.base': 'o senha precisa ser do tipo texto',
-        'any.required': 'Senha é obrigatória',
-        'string.min': 'A senha deve ter pelo menos 6 caracteres'
+        'string.empty': 'Password cannot be empty.',
+        'string.base': 'Password must be text type.',
+        'any.required': 'Password is required.',
+        'string.min': 'Password must have at least 6 characters.'
     }),
 
     data_nascimento: joi.string().min(8).required().messages({
-        'string.empty': 'Data de nascimento não pode ser vazia',
-        'string.base': 'A data de nascimento precisa ser do tipo texto',
-        'any.required': 'Data de nascimento é obrigatória',
-        'string.min': 'A data de nascimento deve ter pelo menos 5 caracteres'
+        'string.empty': 'Date of birth cannot be empty.',
+        'string.base': 'Date of birth must be text type.',
+        'any.required': 'Date of birth is required.',
+        'string.min': 'Date of birth must have at least 8 characters.'
     }),
 
     telefone: joi.string().length(11).required().messages({
-        'string.empty': 'Senha não pode ser vazia',
-        'string.base': 'o cpf precisa ser do tipo texto',
-        'any.required': 'Senha é obrigatória',
-        'string.length': 'A senha deve ter pelo menos 11 caracteres'
+        'string.empty': 'Phone cannot be empty.',
+        'string.base': 'Phone must be text type.',
+        'any.required': 'Phone is required.',
+        'string.length': 'Phone must have at least 11 characters.'
     })
 });

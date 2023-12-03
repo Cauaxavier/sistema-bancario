@@ -27,9 +27,5 @@ module.exports = {
         return knex("contas")
             .leftJoin("usuarios", "contas.usuario_id", "usuarios.id")
             .select("contas.id as numero", "contas.saldo", "usuarios.* as usuario")    
-
-        //         onst transacoesPorCategoria = await knex('transacoes')
-    //   .leftJoin('categorias', 'transacoes.categoria_id', 'categorias.id')
-    //   .select('transacoes.*', 'categorias.descricao as categoria_nome');
     }
 }
