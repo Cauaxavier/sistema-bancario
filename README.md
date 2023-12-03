@@ -46,8 +46,9 @@ Antes de começar, certifique-se de ter os seguintes requisitos:
 - [Jsonwebtoken](https://jwt.io/introduction): Para gerar e válidar o token do usuário.
 - [Dotenv](https://www.npmjs.com/package/dotenv): Para criar as variáveis de ambiente.
 - [Cors](https://expressjs.com/en/resources/middleware/cors.html): Informa aos navegadores se um determinado recurso pode ou não ser acessado.
-- [pg](https://node-postgres.com/): Cria a conexão com o banco de dados.
-- [joi](https://joi.dev/api/): Faz verificações personalizadas das requisições. 
+- [Pg](https://node-postgres.com/): Cria a conexão com o banco de dados.
+- [Joi](https://joi.dev/api/): Faz verificações personalizadas das requisições.
+- [Nodemon](https://nodemon.io/): É uma ferramenta que reinicia automaticamente o aplicativo do nodejs quando são detectadas alterações no arquivo no diretório. 
 
 ## 🔧 Instalação 
 
