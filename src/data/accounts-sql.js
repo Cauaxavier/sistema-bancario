@@ -23,9 +23,24 @@ module.exports = {
         return knex("usuarios").where({ email }).first();
     },
 
+    async get_account_by_id(id) {
+        return knex("usuarios").where({ id }).first();
+    },
+
     async list_accounts() {
         return knex("contas")
             .leftJoin("usuarios", "contas.usuario_id", "usuarios.id")
-            .select("contas.id as numero", "contas.saldo", "usuarios.* as usuario")    
+            .select("contas.id as numero", "contas.saldo", "usuarios.* as usuario");    
+    },
+
+    async update_account(user_data, id) {
+        return knex("usuarios").update({
+            cpf: user_data.cpf,
+            data_nascimento: user_data.data_nascimento,
+            email: user_data.email,
+            nome: user_data.nome,
+            senha: user_data.senha,
+            telefone: user_data.telefone
+        }).where({ id });
     }
 }
