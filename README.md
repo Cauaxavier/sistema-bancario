@@ -159,6 +159,7 @@ npm run dev
     -   senha
         
 -   **Resposta** - Um objeto com as seguintes propriedades:
+   
     - nome
     - cpf
     - data_nascimento
@@ -191,9 +192,42 @@ npm run dev
 }
 ```
 
+### Atualizar usuário da conta bancária
+
+#### `PUT` `/accounts`
+
+-   **Requisição** - O corpo (body) deverá possuir um objeto com todas as seguintes propriedades:
+   
+    -   nome
+    -   cpf
+    -   data_nascimento
+    -   telefone
+    -   email
+    -   senha
+ 
+ -   **Resposta** - sem resposta
+
+ #### Exemplo de Requisição
+```javascript
+// PUT /contas/:numeroConta/usuario
+{
+    "nome": "Foo Bar 3",
+    "cpf": "99911122234",
+    "data_nascimento": "2021-03-15",
+    "telefone": "71999998888",
+    "email": "foo@bar3.com",
+    "senha": "12345"
+{
+```
+#### Exemplo de Resposta
+
+```javascript
+// HTTP Status 200 / 201 / 204
+// Sem conteúdo no corpo (body) da resposta
+```
+
 ## ⌨️ Ajustes e melhorias
 
--   Atualizar os dados do usuário da conta bancária
 -   Excluir uma conta bancária
 -   Depósitar em uma conta bancária
 -   Sacar de uma conta bancária
