@@ -15,7 +15,7 @@ module.exports = {
     },
 
     async validateCpfAndEmailToUpdate(cpf, email, user_id) {
-        const user_data = await knex.get_account_by_id(user_id);
+        const user_data = await knex.get_user_by_id(user_id);
 
         const cpfRepetido = await knex.get_account_by_cpf(cpf);
         const emailRepetido = await knex.get_account_by_email(email);

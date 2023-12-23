@@ -23,8 +23,12 @@ module.exports = {
         return knex("usuarios").where({ email }).first();
     },
 
-    async get_account_by_id(id) {
+    async get_user_by_id(id) {
         return knex("usuarios").where({ id }).first();
+    },
+
+    async get_account_by_id(id) {
+        return knex("contas").where({ usuario_id: id }).first();
     },
 
     async list_accounts() {
@@ -42,5 +46,10 @@ module.exports = {
             senha: user_data.senha,
             telefone: user_data.telefone
         }).where({ id });
+    },
+
+    async delete_account(id) {
+        await knex("contas").del().where({ usuario_id: id });
+        return knex("usuarios").del().where({ id });
     }
 }

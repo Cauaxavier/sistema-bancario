@@ -1,7 +1,10 @@
 const bcrypt = require('bcrypt');
 
 const accountsSql = require("../data/accounts-sql");
-const { validateCpfAndEmail, validateCpfAndEmailToUpdate } = require("../services/validations/validate-field-unique");
+const { 
+        validateCpfAndEmail, 
+        validateCpfAndEmailToUpdate 
+    } = require("../services/validations/validate-field-unique");
 
 module.exports = {
     
@@ -76,7 +79,26 @@ module.exports = {
 
             await accountsSql.update_account(user_data, req.userID);
     
-            return res.status(201).json({ message: "Account successfully updated." });
+            return res.status(204).json();
+
+        } catch (error) {
+            return res.status(500).json({ message: "Error in server." });
+        }
+    },
+
+    async deleteAccount(req, res) {
+        try {
+
+            const user_id = req.userID;
+            const account_user = await accountsSql.get_account_by_id(user_id);
+            
+            if (account_user.saldo != 0) {
+                return res.status(400).json({ message: "The account can't be deleted because there is still a balance." });
+            }
+        
+            await accountsSql.delete_account(user_id);
+
+            return res.status(204).json();
 
         } catch (error) {
             return res.status(500).json({ message: "Error in server." });

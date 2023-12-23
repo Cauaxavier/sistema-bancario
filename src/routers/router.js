@@ -17,5 +17,6 @@ routers.get('/accounts', accountsController.listAccounts);
 routers.use(authMiddleware);
 
 routers.put('/accounts/', validateBody(accountsUpdateMiddleware),accountsController.updateAccount);
+routers.delete('/accounts/', accountsController.deleteAccount);
 
 module.exports = routers;
