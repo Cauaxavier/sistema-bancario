@@ -226,9 +226,29 @@ npm run dev
 // Sem conteúdo no corpo (body) da resposta
 ```
 
+### Excluir Conta
+
+#### `DELETE` `/accounts`
+
+-   **Requisição** - sem parâmetros
+
+-   **Resposta** - sem resposta
+  
+#### Exemplo de Resposta
+
+```javascript
+// HTTP Status 200 / 201 / 204
+// Sem conteúdo no corpo (body) da resposta
+```
+```javascript
+// HTTP Status 400 / 401 / 403 / 404
+{
+    "message": "The account can't be deleted because there is still a balance!"
+}
+```
+
 ## ⌨️ Ajustes e melhorias
 
--   Excluir uma conta bancária
 -   Depósitar em uma conta bancária
 -   Sacar de uma conta bancária
 -   Transferir valores entre contas bancárias
