@@ -48,7 +48,8 @@ Antes de começar, certifique-se de ter os seguintes requisitos:
 - [Cors](https://expressjs.com/en/resources/middleware/cors.html): Informa aos navegadores se um determinado recurso pode ou não ser acessado.
 - [Pg](https://node-postgres.com/): Cria a conexão com o banco de dados.
 - [Joi](https://joi.dev/api/): Faz verificações personalizadas das requisições.
-- [Nodemon](https://nodemon.io/): É uma ferramenta que reinicia automaticamente o aplicativo do nodejs quando são detectadas alterações no arquivo no diretório. 
+- [Nodemon](https://nodemon.io/): É uma ferramenta que reinicia automaticamente o aplicativo do nodejs quando são detectadas alterações no arquivo no diretório.
+- [Date-fns](https://date-fns.org/): date-fns fornece o conjunto de ferramentas mais abrangente, porém simples e consistente para manipular datas JavaScript em um navegador e Node.js.
 
 ## 🔧 Instalação 
 
@@ -222,7 +223,6 @@ npm run dev
 #### Exemplo de Resposta
 
 ```javascript
-// HTTP Status 200 / 201 / 204
 // Sem conteúdo no corpo (body) da resposta
 ```
 
@@ -237,19 +237,44 @@ npm run dev
 #### Exemplo de Resposta
 
 ```javascript
-// HTTP Status 200 / 201 / 204
 // Sem conteúdo no corpo (body) da resposta
 ```
 ```javascript
-// HTTP Status 400 / 401 / 403 / 404
 {
     "message": "The account can't be deleted because there is still a balance!"
 }
 ```
 
+### Depositar
+
+#### `POST` `/transactions/deposit`
+
+-   **Requisição** - O corpo (body) deverá possuir um objeto com a seguinte propriedade:
+
+    -   valor
+
+-   **Resposta** - Sem resposta.
+
+#### Exemplo de Requisição
+```javascript
+{
+	"valor": 1900
+}
+```
+
+#### Exemplo de Resposta
+
+```javascript
+// Sem conteúdo no corpo (body) da resposta
+```
+```javascript
+{
+    "mensagem": "The value is required."
+}
+```
+
 ## ⌨️ Ajustes e melhorias
 
--   Depósitar em uma conta bancária
 -   Sacar de uma conta bancária
 -   Transferir valores entre contas bancárias
 -   Consultar saldo da conta bancária
