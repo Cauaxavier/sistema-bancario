@@ -181,15 +181,15 @@ npm run dev
 
 ```javascript
 {
-	"user": {
-		"id": 7,
-		"nome": "Foo Bar 1",
-		"data_nascimento": "2021-03-15",
-		"email": "foo@bar3.com",
-		"cpf": "58632906447",
-		"telefone": "71999998888"
-	},
-	"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNzAxNjEc"
+     "usuario": {
+        "id": 7,
+        "nome": "Foo Bar 1",
+        "data_nascimento": "2021-03-15",
+	"email": "foo@bar3.com",
+	"cpf": "58632906447",
+	"telefone": "71999998888"
+     },
+     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNzAxNjEc"
 }
 ```
 
@@ -258,7 +258,7 @@ npm run dev
 #### Exemplo de Requisição
 ```javascript
 {
-	"valor": 1900
+    "valor": 1900
 }
 ```
 
