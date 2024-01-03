@@ -11,6 +11,7 @@ const accountsCreateMiddleware = require('../schemas/accounts-create');
 const userLoginMiddleware = require('../schemas/user-login');
 const accountsUpdateMiddleware = require('../schemas/accounts-update');
 const transactionDepositMiddleware = require('../schemas/transaction-deposit');
+const transactionWithdrawMiddleware = require('../schemas/transaction-withdraw');
 
 routers.post('/accounts', validateBody(accountsCreateMiddleware) ,accountsController.registerAccount);
 routers.post('/login', validateBody(userLoginMiddleware),userLogin);
@@ -22,5 +23,6 @@ routers.put('/accounts/', validateBody(accountsUpdateMiddleware),accountsControl
 routers.delete('/accounts/', accountsController.deleteAccount);
 
 routers.post('/transactions/deposit', validateBody(transactionDepositMiddleware), transactionsController.depositMoney);
+routers.post('/transactions/withdraw', validateBody(transactionWithdrawMiddleware), transactionsController.withdrawMoney);
 
 module.exports = routers;

@@ -9,5 +9,15 @@ module.exports = {
             valor,
             data_deposito 
         });
+    },
+
+    async withdraw_money(valor, novo_valor, id, data_saque) {
+        await knex('contas').update({ saldo: novo_valor }).where({ usuario_id: id });
+
+        return knex('saques').insert({ 
+            numero_conta: id,
+            valor,
+            data_saque
+         });
     }
 }

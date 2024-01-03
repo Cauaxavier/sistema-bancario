@@ -31,7 +31,7 @@ CREATE TABLE saques(
     id serial primary key,
     numero_conta integer references usuarios(id),
     valor numeric not null,
-    senha text not null
+    data_deposito text
 );
 
 CREATE TABLE transferencias(
@@ -39,5 +39,5 @@ CREATE TABLE transferencias(
     numero_conta_origem integer references usuarios(id),
     numero_conta_destino integer references usuarios(id),
     valor numeric not null,
-    senha text not null
+    data_deposito text
 );
