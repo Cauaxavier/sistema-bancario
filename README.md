@@ -273,9 +273,36 @@ npm run dev
 }
 ```
 
+### Sacar
+
+#### `POST` `/transactions/withdraw`
+
+-   **Requisição** - O corpo (body) deverá possuir um objeto com a seguinte propriedade:
+
+    -   valor
+
+-   **Resposta** - Sem resposta.
+
+#### Exemplo de Requisição
+```javascript
+{
+    "valor": 1900
+}
+```
+
+#### Exemplo de Resposta
+
+```javascript
+// Sem conteúdo no corpo (body) da resposta
+```
+```javascript
+{
+    "mensagem": "insufficient funds."
+}
+```
+
 ## ⌨️ Ajustes e melhorias
 
--   Sacar de uma conta bancária
 -   Transferir valores entre contas bancárias
 -   Consultar saldo da conta bancária
 -   Emitir extrato bancário
