@@ -19,5 +19,23 @@ module.exports = {
             valor,
             data_saque
          });
+    },
+
+    async transfer_money(data_of_transfer) {
+        await knex('contas').update({
+            saldo: data_of_transfer.new_value_origin_account
+        }).where({ usuario_id: data_of_transfer.id_conta_origem });
+
+        await knex('contas').update({
+            saldo: data_of_transfer.new_value_destination_account
+        }).where({ usuario_id: data_of_transfer.id_conta_destino });
+
+        return knex('transferencias').insert({
+            numero_conta_origem: data_of_transfer.id_conta_origem,
+            numero_conta_destino: data_of_transfer.id_conta_destino,
+            valor: data_of_transfer.valor,
+            data_transferencia: data_of_transfer.date_of_transfer
+        });
+
     }
 }
