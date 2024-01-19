@@ -301,9 +301,37 @@ npm run dev
 }
 ```
 
+### Tranferir
+
+#### `POST` `/transactions/transfer`
+
+-   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades (respeitando estes nomes):
+
+    -   numero_conta_destino
+    -   valor
+
+-   **Resposta** - Sem resposta
+
+#### Exemplo de Requisição
+```javascript
+{
+	"id_conta_destino": "2",
+	"valor": 200,
+}
+```
+#### Exemplo de Resposta
+
+```javascript
+// Sem conteúdo no corpo (body) da resposta
+```
+```javascript
+{
+    "mensagem": "insufficient founds.!"
+}
+```
+
 ## ⌨️ Ajustes e melhorias
 
--   Transferir valores entre contas bancárias
 -   Consultar saldo da conta bancária
 -   Emitir extrato bancário
 
