@@ -210,7 +210,6 @@ npm run dev
 
  #### Exemplo de Requisição
 ```javascript
-// PUT /contas/:numeroConta/usuario
 {
     "nome": "Foo Bar 3",
     "cpf": "99911122234",
@@ -269,7 +268,7 @@ npm run dev
 ```
 ```javascript
 {
-    "mensagem": "The value is required."
+    "menssage": "The value is required."
 }
 ```
 
@@ -297,7 +296,7 @@ npm run dev
 ```
 ```javascript
 {
-    "mensagem": "insufficient funds."
+    "menssage": "insufficient funds."
 }
 ```
 
@@ -326,7 +325,7 @@ npm run dev
 ```
 ```javascript
 {
-    "mensagem": "insufficient founds.!"
+    "message": "insufficient founds.!"
 }
 ```
 
