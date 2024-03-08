@@ -325,7 +325,7 @@ npm run dev
 ```
 ```javascript
 {
-    "message": "insufficient founds.!"
+    "message": "insufficient founds!"
 }
 ```
 
