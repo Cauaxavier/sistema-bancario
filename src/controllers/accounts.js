@@ -12,7 +12,6 @@ module.exports = {
         const user_data = req.body;
         
         try {
-
             const thereIsAFieldRepeat = await validateCpfAndEmail(user_data.cpf, user_data.email)
 
             if (thereIsAFieldRepeat) {
@@ -34,7 +33,6 @@ module.exports = {
 
     async listAccounts(req, res) {
         try {
-            
             const accounts = await accountsSql.list_accounts();
 
             const formatAccounts = accounts.map(account => {
@@ -67,7 +65,6 @@ module.exports = {
         const user_data = req.body;
 
         try {
-    
             const thereIsAFieldRepeat = await validateCpfAndEmailToUpdate(user_data.cpf, user_data.email, req.userID);
     
             if (thereIsAFieldRepeat) {
@@ -88,7 +85,6 @@ module.exports = {
 
     async deleteAccount(req, res) {
         try {
-
             const user_id = req.userID;
             const account_user = await accountsSql.get_account_by_id(user_id);
             

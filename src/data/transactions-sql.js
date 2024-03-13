@@ -18,7 +18,7 @@ module.exports = {
             numero_conta: id,
             valor,
             data_saque
-         });
+        });
     },
 
     async transfer_money(data_of_transfer) {

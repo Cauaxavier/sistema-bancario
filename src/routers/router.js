@@ -3,6 +3,7 @@ const routers = require('express').Router();
 const userLogin = require('../controllers/user-login')
 const accountsController = require('../controllers/accounts');
 const transactionsController = require('../controllers/transactions');
+const consultations = require('../controllers/consultations');
 
 const validateBody = require('../middlewares/validation-schema');
 const authMiddleware = require('../middlewares/auth_middleware');
@@ -20,11 +21,14 @@ routers.get('/accounts', accountsController.listAccounts);
 
 routers.use(authMiddleware);
 
-routers.put('/accounts/', validateBody(accountsUpdateMiddleware),accountsController.updateAccount);
-routers.delete('/accounts/', accountsController.deleteAccount);
+routers.put('/accounts/users', validateBody(accountsUpdateMiddleware),accountsController.updateAccount);
+routers.delete('/accounts', accountsController.deleteAccount);
 
 routers.post('/transactions/deposit', validateBody(transactionDepositMiddleware), transactionsController.depositMoney);
 routers.post('/transactions/withdraw', validateBody(transactionWithdrawMiddleware), transactionsController.withdrawMoney);
 routers.post('/transactions/transfer', validateBody(transactionTransferMiddleware), transactionsController.transferMoney);
+
+routers.get('/accounts/balance', consultations.getBalance);
+routers.get('/accounts/extract', consultations.extract);
 
 module.exports = routers;
