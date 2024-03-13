@@ -210,7 +210,6 @@ npm run dev
 
  #### Exemplo de Requisição
 ```javascript
-// PUT /contas/:numeroConta/usuario
 {
     "nome": "Foo Bar 3",
     "cpf": "99911122234",
@@ -269,7 +268,7 @@ npm run dev
 ```
 ```javascript
 {
-    "mensagem": "The value is required."
+    "menssage": "The value is required."
 }
 ```
 
@@ -297,13 +296,41 @@ npm run dev
 ```
 ```javascript
 {
-    "mensagem": "insufficient funds."
+    "menssage": "insufficient funds."
+}
+```
+
+### Tranferir
+
+#### `POST` `/transactions/transfer`
+
+-   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades (respeitando estes nomes):
+
+    -   numero_conta_destino
+    -   valor
+
+-   **Resposta** - Sem resposta
+
+#### Exemplo de Requisição
+```javascript
+{
+	"id_conta_destino": "2",
+	"valor": 200,
+}
+```
+#### Exemplo de Resposta
+
+```javascript
+// Sem conteúdo no corpo (body) da resposta
+```
+```javascript
+{
+    "message": "insufficient founds!"
 }
 ```
 
 ## ⌨️ Ajustes e melhorias
 
--   Transferir valores entre contas bancárias
 -   Consultar saldo da conta bancária
 -   Emitir extrato bancário
 
