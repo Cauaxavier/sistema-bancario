@@ -329,10 +329,82 @@ npm run dev
 }
 ```
 
-## ⌨️ Ajustes e melhorias
+### Saldo
 
--   Consultar saldo da conta bancária
--   Emitir extrato bancário
+#### `GET` `/accounts/balance`
+
+-   **Requisição** - Sem parâmetros
+
+-   **Resposta** - Um objeto com as seguintes propriedades
+
+    -   Saldo da conta
+
+#### Exemplo de Resposta
+
+```javascript
+{
+    "balance": 13000
+}
+```
+
+### Extrato
+
+#### `GET` `/accounts/extract`
+
+-   **Requisição** - Sem parâmetros
+
+-   **Resposta** - Um objeto com as seguintes propriedades
+  
+    -   Relatório da conta
+ 
+#### Exemplo de Resposta
+
+```javascript
+// HTTP Status 200 / 201 / 204
+{
+  "depositos": [
+    {
+      "data": "2021-08-18 20:46:03",
+      "numero_conta": "1",
+      "valor": 10000
+    },
+    {
+      "data": "2021-08-18 20:46:06",
+      "numero_conta": "1",
+      "valor": 10000
+    }
+  ],
+  "saques": [
+    {
+      "data": "2021-08-18 20:46:18",
+      "numero_conta": "1",
+      "valor": 1000
+    }
+  ],
+"transferenciasEnviadas": [
+    {
+      "data": "2021-08-18 20:47:10",
+      "numero_conta_origem": "1",
+      "numero_conta_destino": "2",
+      "valor": 5000
+    }
+  ],
+  "transferenciasRecebidas": [
+    {
+      "data": "2021-08-18 20:47:24",
+      "numero_conta_origem": "2",
+      "numero_conta_destino": "1",
+      "valor": 2000
+    },
+    {
+      "data": "2021-08-18 20:47:26",
+      "numero_conta_origem": "2",
+      "numero_conta_destino": "1",
+      "valor": 2000
+    }
+  ]
+}
+```
 
 ## ✒️ Autor
 
