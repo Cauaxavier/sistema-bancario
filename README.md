@@ -381,7 +381,7 @@ npm run dev
       "valor": 1000
     }
   ],
-"transferenciasEnviadas": [
+  "transferenciasEnviadas": [
     {
       "data": "2021-08-18 20:47:10",
       "numero_conta_origem": "1",
